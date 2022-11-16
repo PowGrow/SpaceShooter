@@ -34,6 +34,11 @@ public class Movement : MonoBehaviour
         Move();
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     private void Awake()
     {
         _deltaX = 0;
