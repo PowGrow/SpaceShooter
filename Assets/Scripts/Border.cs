@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,6 +11,10 @@ public class Border : MonoBehaviour
     private float _borderHorizontal, _borderVertical;
     private GameObject _player;
     
+    public Vector2 GetBorderds()
+    {
+        return new Vector2(_borderHorizontal, _borderVertical);
+    }
 
     private float BorderPositionCorrection(float playerPosition, float border, float borderOffset)
     {
@@ -31,12 +34,6 @@ public class Border : MonoBehaviour
         _borderVertical = Camera.main.orthographicSize;
         _borderHorizontal = Camera.main.orthographicSize * ((float)Screen.width / (float)Screen.height);
         _player = GameObjectList.GetObjects("Player").First();
-    }
-
-    private void FixedUpdate()
-    {
-        List<GameObject> objects = GameObjectList.GetObjects();
-
     }
 
     private void LateUpdate()
